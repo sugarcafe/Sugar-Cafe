@@ -11,10 +11,12 @@
   <!-- Header -->
   <header>
     <nav>
-      <div class="logo">
-        <a href="index.html">Sugar Cafe</a>
-      </div>
-      <ul class="nav-links">
+      <a href="index.html" class="logo">
+        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="logo-img">
+        <span>Sugar Cafe</span>
+      </a>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="menu.html" class="active">Menu</a></li>
         <li><a href="branches.html">Branches</a></li>
@@ -77,14 +79,25 @@
       <div class="footer-column">
         <h4>Quick Links</h4>
         <ul>
+          <li><a href="about.html">About</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="branches.html">Branches</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </footer>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-links');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  }
+</script>
 
 </body>
 </html>

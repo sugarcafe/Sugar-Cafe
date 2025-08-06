@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Careers - Sugar Cafe</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,34 +11,41 @@
   <!-- Header -->
   <header>
     <nav>
-      <div class="logo">
-        <a href="index.html">Sugar Cafe</a>
-      </div>
-      <ul class="nav-links">
+      <a href="index.html" class="logo">
+        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="logo-img">
+        <span>Sugar Cafe</span>
+      </a>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="branches.html">Branches</a></li>
-        <li><a href="careers.html" class="active">Careers</a></li>
+        <li><a href="branches.html" class="active">Branches</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" style="background-image: url('images/careers-banner.jpg');">
+  <section class="hero" style="background-image: url('images/branches-banner.jpg');">
     <div class="hero-overlay">
-      <h1>Join Our Team</h1>
+      <h1>Careers</h1>
     </div>
   </section>
 
-  <!-- Careers Content -->
-  <section class="page-content careers">
-    <div class="career-content">
+  <!-- Careers Section -->
+  <section class="careers-section">
+    <div class="container">
+      <h1>Join Our Team</h1>
+
       <h2>Our Mission</h2>
-      <p>To serve high-quality and refreshing milk tea beverages made with love and passion.</p>
+      <p>Our mission is to serve every Filipino with the best-tasting beverage with our wide array
+      of options, available to almost everywhere, and a price that is made available to everyone.</p>
 
       <h2>Our Vision</h2>
-      <p>To be the leading milk tea cafe recognized for exceptional customer service, community impact, and innovation.</p>
+      <p>Our vision is to be the nation's choice in providing a great beverage experience with distinct
+      flavors and a taste unmatchable to the leading brands that are affordably available to everyone
+      without compromising our quality.</p>
     </div>
   </section>
 
@@ -61,17 +68,24 @@
       <div class="footer-column">
         <h4>Quick Links</h4>
         <ul>
+          <li><a href="about.html">About</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="branches.html">Branches</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </footer>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-links');
 
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  }
+</script>
 </body>
 </html>
-
-
-

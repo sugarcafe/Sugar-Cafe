@@ -9,9 +9,12 @@
 <body>
   <header>
     <nav>
-      <!-- Clickable logo -->
-      <a href="index.html" class="logo">Sugar Cafe</a>
-      <ul class="nav-links">
+      <a href="index.html" class="logo">
+        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="logo-img">
+        <span>Sugar Cafe</span>
+      </a>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="branches.html">Branches</a></li>
@@ -20,6 +23,7 @@
       </ul>
     </nav>
   </header>
+
 
   <section class="hero">
     <h1>Welcome to Sugar Cafe</h1>
@@ -31,9 +35,9 @@
       <div class="footer-column">
         <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="footer-logo">
         <div class="footer-socials">
-          <a href="#"><img src="img/icon-fb.png" alt="Facebook"></a>
-          <a href="#"><img src="img/icon-ig.png" alt="Instagram"></a>
-          <a href="#"><img src="img/icon-x.png" alt="Twitter"></a>
+          <a href="#"><img src="placeholder-facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="placeholder-instagram.png" alt="Instagram" /></a>
+          <a href="#"><img src="placeholder-twitter.png" alt="Twitter" /></a>
         </div>
       </div>
       <div class="footer-column">
@@ -44,6 +48,7 @@
       <div class="footer-column">
         <h4>Quick Links</h4>
         <ul>
+          <li><a href="about.html">About</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="branches.html">Branches</a></li>
           <li><a href="careers.html">Careers</a></li>
@@ -52,6 +57,12 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('nav-links').classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>

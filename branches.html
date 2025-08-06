@@ -3,54 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Branches - Sugar Cafe</title>
+  <title>Sugar Cafe - Branches</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .sidebar {
+      width: 25%;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .region-columns {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .region-column {
+      flex: 1;
+      min-width: 100px;
+    }
+    .region-column h3, .region-column h4 {
+      margin: 10px 0 5px;
+    }
+    .region-column button {
+      display: block;
+      margin-bottom: 5px;
+      background-color: transparent;
+      border: none;
+      text-align: left;
+      padding: 5px;
+      cursor: pointer;
+      color: #333;
+    }
+    .region-column button:hover {
+      background-color: #ddd;
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    .branch-info {
+      display: none;
+    }
+    .branch-info.active {
+      display: block;
+    }
+    .branch-card {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 250px;
+      border: 0;
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      padding: 10px;
+      min-width: 200px;
+    }
+    .footer-logo {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+    .footer-socials img {
+      width: 24px;
+      margin-right: 5px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <nav>
       <div class="logo">
-        <a href="index.html">Sugar Cafe</a>
+        <a href="index.html" class="logo">
+          <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="logo-img">
+          <span>Sugar Cafe</span>
+        </a>
       </div>
-      <ul class="nav-links">
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="branches.html" class="active">Branches</a></li>
+        <li><a href="branches.html">Branches</a></li>
         <li><a href="careers.html">Careers</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" style="background-image: url('images/branches-banner.jpg');">
+  <div class="hero">
     <div class="hero-overlay">
-      <h1>Our Branches</h1>
+      <h1>Branches</h1>
     </div>
-  </section>
+  </div>
 
-  <!-- Branches Content -->
-  <section class="page-content branches">
-    <div class="branch-list">
-      <div class="branch">
-        <h3>Quezon City Branch</h3>
-        <p>123 Katipunan Avenue, Quezon City</p>
+  <div class="branches-wrapper">
+    <div class="sidebar">
+      <h2>Location</h2>
+      <div class="region-columns">
+
+        <div class="region-column">
+          <h3>Luzon</h3>
+          <button onclick="toggleSub('metro')">Metro Manila</button>
+          <div id="metro" style="display:none;">
+            <button onclick="showBranches('quezon')">Quezon City</button>
+            <button onclick="showBranches('manila')">Manila</button>
+            <button onclick="showBranches('pasig')">Pasig</button>
+          </div>
+        </div>
+
+        <div class="region-column">
+          <h3>Visayas</h3>
+          <button onclick="toggleSub('cebuGroup')">Cebu</button>
+          <div id="cebuGroup" style="display:none;">
+            <button onclick="showBranches('cebu')">Cebu City</button>
+          </div>
+        </div>
+
+        <div class="region-column">
+          <h3>Mindanao</h3>
+          <button onclick="toggleSub('davaoGroup')">Davao</button>
+          <div id="davaoGroup" style="display:none;">
+            <button onclick="showBranches('davao')">Davao City</button>
+          </div>
+        </div>
+
       </div>
-      <div class="branch">
-        <h3>Makati Branch</h3>
-        <p>456 Ayala Avenue, Makati City</p>
-      </div>
-      <div class="branch">
-        <h3>Taguig Branch</h3>
-        <p>789 Bonifacio High Street, Taguig City</p>
-      </div>
-      <!-- Add more branches as needed -->
     </div>
-  </section>
 
-  <!-- Footer -->
+    <div class="main-content">
+      <div class="branch-info active" id="quezon">
+        <h2>Quezon City Branches</h2>
+        <div class="branch-card">
+          <h3>SM North EDSA</h3>
+          <p>📍3rd Floor, Main Building</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch-info" id="manila">
+        <h2>Manila Branches</h2>
+        <div class="branch-card">
+          <h3>SM Manila</h3>
+          <p>📍Ground Floor</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="branch-card">
+          <h3>Robinsons Place Manila</h3>
+          <p>📍 Adriatico St., Ermita, Manila</p>
+          <p>🕒 10AM – 9PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps?q=robinsons+place+manila&output=embed"></iframe>
+          </div>
+        </div>
+</div>
+      </div>
+
+      <div class="branch-info" id="pasig">
+        <h2>Pasig Branches</h2>
+        <div class="branch-card">
+          <h3>Robinson Galleria</h3>
+          <p>📍 Lower Ground Floor, Robinsons Galleria, Pasig City</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps?q=robinsons+galleria+pasig&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch-info" id="cebu">
+        <h2>Cebu Branches</h2>
+        <div class="branch-card">
+          <h3>Ayala Center Cebu</h3>
+          <p>📍Level 1, Activity Center</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch-info" id="davao">
+        <h2>Davao Branches</h2>
+        <div class="branch-card">
+          <h3>SM Lanang</h3>
+          <p>📍Ground Floor, Main Wing</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-column">
@@ -69,14 +235,67 @@
       <div class="footer-column">
         <h4>Quick Links</h4>
         <ul>
+          <li><a href="about.html">About</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="branches.html">Branches</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </footer>
+
+  <script>
+  function showBranches(city) {
+    // 1. Hide all branch info
+    const infos = document.querySelectorAll('.branch-info');
+    infos.forEach(info => info.classList.remove('active'));
+
+    // 2. Show selected city
+    document.getElementById(city).classList.add('active');
+
+    // 3. Remove 'active-city' from all buttons
+    document.querySelectorAll('.region-column button').forEach(btn => {
+      btn.classList.remove('active-city');
+    });
+
+    // 4. Highlight the clicked city button
+    const cityButton = Array.from(document.querySelectorAll('.region-column button'))
+      .find(btn => btn.textContent.toLowerCase().includes(city.replace(/city/i, '').toLowerCase()));
+    if (cityButton) {
+      cityButton.classList.add('active-city');
+    }
+
+    // 5. Highlight parent region
+    const regionButtons = ['metro', 'cebuGroup', 'davaoGroup'];
+    regionButtons.forEach(id => {
+      const el = document.querySelector(`button[onclick="toggleSub('${id}')"]`);
+      if (el) el.classList.remove('active-region');
+    });
+
+    if (city === 'quezon' || city === 'manila') {
+      document.querySelector(`button[onclick="toggleSub('metro')"]`).classList.add('active-region');
+    } else if (city === 'cebu') {
+      document.querySelector(`button[onclick="toggleSub('cebuGroup')"]`).classList.add('active-region');
+    } else if (city === 'davao') {
+      document.querySelector(`button[onclick="toggleSub('davaoGroup')"]`).classList.add('active-region');
+    }
+  }
+
+  function toggleSub(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-links');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  }
+</script>
 
 </body>
 </html>

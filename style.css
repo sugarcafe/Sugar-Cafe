@@ -246,8 +246,15 @@ nav {
 }
 
 .nav-links {
-  list-style: none;
-  gap: 20px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #000000e6;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 20px;
+  border-radius: 8px;
+  z-index: 999;
 }
 
 .nav-links li a {
@@ -342,7 +349,6 @@ body {
     }
     .nav-links {
       list-style: none;
-      display: flex;
       gap: 20px;
     }
     .nav-links li a {
@@ -734,7 +740,7 @@ nav {
 
 .menu-toggle {
   display: none;
-  font-size: 30px;
+  font-size: 28px;
   color: white;
   cursor: pointer;
 }
@@ -776,19 +782,23 @@ nav {
   .nav-links {
     display: none;
     position: absolute;
+    flex-direction: column;
     top: 60px; /* adjust if your nav height is different */
     right: 20px;
     background-color: #472c25;
-    padding: 1rem;
+    align-items: flex-start;
+    padding: 10;
     border-radius: 10px;
-    z-index: 1000;
+    z-index: 100;
   }
 
   .nav-links.show {
-    display: block;
+    display: flex;
   }
 
   .menu-toggle {
     display: block;
+    font-size: 30px;
+    cursor: pointer;
   }
 }

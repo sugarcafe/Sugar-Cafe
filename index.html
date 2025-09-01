@@ -1,66 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sugar Cafe</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugar Cafe</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .image-container img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Overlay centered */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); /* darker overlay */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Cafe-style title */
+    .overlay h2 {
+        margin: 0 0 15px 0;
+        font-size: 2.5em;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    /* Button style */
+    .btn {
+        display: inline-block;
+        background-color: #d4a373;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 1em;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #b5835a;
+    }
+
+    /* Responsive title size for mobile */
+    @media (max-width: 600px) {
+        .overlay h2 {
+            font-size: 1.8em;
+        }
+    }
+</style>
+
+</style>
 </head>
 <body>
+
   <header>
-    <nav>
-      <a href="index.html" class="logo">
-        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="logo-img">
-        <span>Sugar Cafe</span>
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Sugar Cafe Logo" class="logo-img">
+    </a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="branches.html">Branches</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Image 1 -->
+<div class="image-container">
+    <img src="2.jpg" alt="Image 1">
+    <div class="overlay">
+        <h2>OUR STORY</h2>
+        <a href="about.html" class="btn">LEARN MORE</a>
+    </div>
+</div>
+
+<!-- Image 2 -->
+<div class="image-container">
+    <img src="2.jpg" alt="Image 2">
+    <div class="overlay">
+        <h2>DRINKS</h2>
+        <a href="menu.html" class="btn">MENU</a>
+    </div>
+</div>
+
+<!-- Image 3 -->
+<div class="image-container">
+    <img src="2.jpg" alt="Image 3">
+    <div class="overlay">
+        <h2>BRANCHES</h2>
+        <a href="branches.html" class="btn">LOCATIONS</a>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <img src="Sugar1.png" alt="Sugar Cafe Logo" class="footer-logo">
+      <div class="footer-socials">
+        <a href="#"><img src="placeholder-facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="placeholder-instagram.png" alt="Instagram" /></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <p>
+          <a href="https://www.google.com/maps?q=123+Milk+Tea+Street,+Sweet+City" 
+             target="_blank" 
+             style="color: inherit; text-decoration: underline;">
+            123 Milk Tea Street, Sweet City
+          </a>
+        </p>
+      <a href="mailto:sugarcafe2023@gmail.com" style="text-decoration: underline; color: black;">sugarcafe2023@gmail.com
       </a>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
         <li><a href="about.html">About</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="branches.html">Branches</a></li>
         <li><a href="careers.html">Careers</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
-    </nav>
-  </header>
-
-
-  <section class="hero">
-    <h1>Welcome to Sugar Cafe</h1>
-    <p>Your favorite milk tea destination</p>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="footer-logo">
-        <div class="footer-socials">
-          <a href="#"><img src="placeholder-facebook.png" alt="Facebook" /></a>
-          <a href="#"><img src="placeholder-instagram.png" alt="Instagram" /></a>
-          <a href="#"><img src="placeholder-twitter.png" alt="Twitter" /></a>
-        </div>
-      </div>
-      <div class="footer-column">
-        <h4>Contact Us</h4>
-        <p>331 Fernando Poe Jr. Quezon City, PH</p>
-        <p>sugarcafe2023@gmail.com</p>
-      </div>
-      <div class="footer-column">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="branches.html">Branches</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-  document.getElementById('menu-toggle').addEventListener('click', function () {
-    document.getElementById('nav-links').classList.toggle('show');
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
   });
 </script>
 

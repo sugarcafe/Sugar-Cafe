@@ -37,6 +37,16 @@
     .region-column button:hover {
       background-color: #ddd;
     }
+    .active-city {
+      font-weight: bold;
+      background-color: #ffc107;
+      color: black;
+    }
+
+    .active-region {
+      font-weight: bold;
+      text-decoration: underline;
+    }
     .main-content {
       flex: 1;
       padding: 20px;
@@ -48,16 +58,22 @@
       display: block;
     }
     .branch-card {
-      margin-bottom: 20px;
-      padding: 15px;
-      background-color: #fafafa;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 0rem;
+      margin-bottom: 2rem;
     }
     .map-container iframe {
       width: 100%;
       height: 250px;
       border: 0;
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+    .map-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
     }
     footer {
       background-color: #222;
@@ -75,7 +91,7 @@
       min-width: 200px;
     }
     .footer-logo {
-      height: 100px;
+      height: 200px;
       margin-bottom: 10px;
     }
     .footer-socials img {
@@ -90,24 +106,24 @@
     <nav>
       <div class="logo">
         <a href="index.html" class="logo">
-          <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="logo-img">
-          <span>Sugar Cafe</span>
+          <img src="logo.png" alt="Sugar Cafe Logo" class="logo-img">
+          <span></span>
         </a>
       </div>
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <ul class="nav-links" id="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="branches.html">Branches</a></li>
+        <li><a href="branches.html" class="active">Branches</a></li>
         <li><a href="careers.html">Careers</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="hero">
+  <div class="hero hero-branches">
     <div class="hero-overlay">
-      <h1>Branches</h1>
+      <h1>BRANCHES</h1>
     </div>
   </div>
 
@@ -118,27 +134,44 @@
 
         <div class="region-column">
           <h3>Luzon</h3>
-          <button onclick="toggleSub('metro')">Metro Manila</button>
+          <button onclick="toggleSub('metro')" style="font-weight: bold; text-decoration: underline;">Metro Manila</button>
           <div id="metro" style="display:none;">
             <button onclick="showBranches('quezon')">Quezon City</button>
             <button onclick="showBranches('manila')">Manila</button>
             <button onclick="showBranches('pasig')">Pasig</button>
+            <button onclick="showBranches('mandaluyong')">Mandaluyong</button>
+            <button onclick="showBranches('marikina')">Marikina</button>
+          </div>
+
+          <button onclick="toggleSub('fernando')" style="font-weight: bold; text-decoration: underline;">San Fernando</button>
+          <div id="fernando" style="display:none;">
+            <button onclick="showBranches('ecija')">Nueva Ecija</button>
+            <button onclick="showBranches('zambales')">Zambales</button>
+            <button onclick="showBranches('pampanga')">Pampanga</button>
+          </div>
+
+          <button onclick="toggleSub('calamba')" style="font-weight: bold; text-decoration: underline;">Calamba</button>
+          <div id="calamba" style="display:none;">
+            <button onclick="showBranches('batangas')">Batangas</button>
+            <button onclick="showBranches('qzon')">Quezon</button>
+            <button onclick="showBranches('cavite')">Cavite</button>
+            <button onclick="showBranches('laguna')">Laguna</button>
           </div>
         </div>
 
         <div class="region-column">
           <h3>Visayas</h3>
-          <button onclick="toggleSub('cebuGroup')">Cebu</button>
-          <div id="cebuGroup" style="display:none;">
-            <button onclick="showBranches('cebu')">Cebu City</button>
+          <button onclick="toggleSub('cebu')" style="font-weight: bold; text-decoration: underline;">Cebu</button>
+          <div id="cebu" style="display:none;">
+            <button onclick="showBranches('pagadian')">Pagadian</button>
           </div>
         </div>
 
         <div class="region-column">
           <h3>Mindanao</h3>
-          <button onclick="toggleSub('davaoGroup')">Davao</button>
-          <div id="davaoGroup" style="display:none;">
-            <button onclick="showBranches('davao')">Davao City</button>
+          <button onclick="toggleSub('mindanao')" style="font-weight: bold; text-decoration: underline;">Davao</button>
+          <div id="mindanao" style="display:none;">
+            <button onclick="showBranches('bukidnon')">Bukidnon</button>
           </div>
         </div>
 
@@ -149,15 +182,25 @@
       <div class="branch-info active" id="quezon">
         <h2>Quezon City Branches</h2>
         <div class="branch-card">
-          <h3>SM North EDSA</h3>
-          <p>📍3rd Floor, Main Building</p>
+          <h3>Novaliches</h3>
+          <p>📍67-A Pantabangan St, NIA village, Brgy Sauyo, Novaliches, QC</p>
           <p>🕒 Open daily: 10 AM – 9 PM</p>
           <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.375045409298!2d121.04630562574245!3d14.691370474846567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1672b2f3979%3A0xd277867b699e1824!2sL8%20B2!5e0!3m2!1sen!2sph!4v1754563238457!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-      </div>
 
+        <div class="branch-card">
+          <h3>NS Amoranto</h3>
+          <p>📍 74 ns amoranto quezon city</p>
+          <p>🕒 10AM – 9PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.517344085471!2d120.98954947574167!3d14.626549276439563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b60b99d3aaab%3A0x315c33e9f704ddfe!2s74%20N.S.%20Amoranto%20Sr.%20St%2C%20La%20Loma%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1754563503257!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+      </div>
+      
       <div class="branch-info" id="manila">
         <h2>Manila Branches</h2>
         <div class="branch-card">
@@ -168,6 +211,7 @@
             <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
           </div>
         </div>
+
         <div class="branch-card">
           <h3>Robinsons Place Manila</h3>
           <p>📍 Adriatico St., Ermita, Manila</p>
@@ -176,61 +220,236 @@
             <iframe src="https://www.google.com/maps?q=robinsons+place+manila&output=embed"></iframe>
           </div>
         </div>
-</div>
+
+        <div class="branch-card">
+          <h3>Recto</h3>
+          <p>📍 Adriatico St., Ermita, Manila</p>
+          <p>🕒 10AM – 9PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps?q=robinsons+place+manila&output=embed"></iframe>
+          </div>
+        </div>
       </div>
 
       <div class="branch-info" id="pasig">
-        <h2>Pasig Branches</h2>
+        <h2>Pasig City Branch</h2>
         <div class="branch-card">
           <h3>Robinson Galleria</h3>
-          <p>📍 Lower Ground Floor, Robinsons Galleria, Pasig City</p>
-          <p>🕒 Open daily: 10 AM – 9 PM</p>
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps?q=robinsons+galleria+pasig&output=embed"></iframe>
-          </div>
-        </div>
-      </div>
-
-      <div class="branch-info" id="cebu">
-        <h2>Cebu Branches</h2>
-        <div class="branch-card">
-          <h3>Ayala Center Cebu</h3>
-          <p>📍Level 1, Activity Center</p>
+          <p>📍Ground Floor</p>
           <p>🕒 Open daily: 10 AM – 9 PM</p>
           <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
           </div>
         </div>
-      </div>
-
-      <div class="branch-info" id="davao">
-        <h2>Davao Branches</h2>
+     </div>
+      
+      <div class="branch-info" id="mandaluyong">
+        <h2>Mandaluyong City Branch</h2>
         <div class="branch-card">
-          <h3>SM Lanang</h3>
-          <p>📍Ground Floor, Main Wing</p>
+          <h3>Dreamland Subdivision</h3>
+          <p>📍322 Uranus st Dreamland Subdivision Mandaluyong City</p>
           <p>🕒 Open daily: 10 AM – 9 PM</p>
           <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.331599725692!2d121.02232077574108!3d14.580171227575201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9b6ea7150c5%3A0xb0c6444c295807b2!2sDreamland%20Subdivision!5e0!3m2!1sen!2sph!4v1754562900585!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="branch-card">
+          <h3>Greenfield District Edsa-Shaw</h3>
+          <p>📍 Greenfield District Edsa-Shaw</p>
+          <p>🕒 10AM – 9PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps?q=robinsons+place+manila&output=embed"></iframe>
+          </div>
+        </div>
+     </div>
+
+     <div class="branch-info" id="marikina">
+        <h2>Marikina City Branch</h2>
+        <div class="branch-card">
+          <h3>Sto Niño</h3>
+          <p>📍4 Exequiel st., Sto Niño Marikina City</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.197092415757!2d121.09785017574195!3d14.644750675992906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9c8714c3d31%3A0x686f92dfeae38de0!2s4%20Exequiel%2C%20Marikina%2C%201800%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1754565231478!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+     </div>
+
+     <div class="main-content">
+      <div class="branch-info active" id="ecija">
+        <h2>Nueva Ecija City Branch</h2>
+
+        <div class="branch-card">
+          <h3>Novaliches</h3>
+          <p>📍67-A Pantabangan St, NIA village, Brgy Sauyo, Novaliches, QC</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.1046601422327!2d120.97213297575095!3d15.370817157754912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339727a83de4ac49%3A0x16c94b2ec1e678ec!2sPurok%207%20Mallorca%20Sanleonardo%20nueva%20Ecija!5e0!3m2!1sen!2sph!4v1754613145263!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-info active" id="zambales">
+          <h2>Zambales City Branch</h2>
+          <div class="branch-card">
+          <h3>Del Pilar</h3>
+          <p>📍67-A Pantabangan St, NIA village, Brgy Sauyo, Novaliches, QC</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src=""></iframe>
+            </div>
+          </div>
+      </div>
+
+      <div class="branch-info active" id="pampanga">
+        <h2>Pampanga City Branch</h2>
+          <div class="branch-card">
+          <h3>Sto Tomas San Luis</h3>
+          <p>📍Sto tomas San luis Pampanga</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123298.80418323248!2d120.70160788099592!3d15.043268540365569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f9431faad7bf%3A0x49f6be5727a22989!2sSanto%20Tomas%2C%20San%20Luis%2C%20Pampanga!5e0!3m2!1sen!2sph!4v1754615249281!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="branch-card">
+          <h3>Sindalan</h3>
+          <p>📍 04 Gloria 1 St. Sindalan City of San Fernando Pampanga</p>
+          <p>🕒 10AM – 9PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15410.007201073247!2d120.63899560977254!3d15.075647786786678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f6cc95135657%3A0x83ed8c2ca50db8be!2s4%20Gloria%201%2C%20San%20Fernando%2C%20Pampanga!5e0!3m2!1sen!2sph!4v1754615464989!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="branch-info active" id="batangas">
+          <h2>Batangas City Branch</h2>
+
+          <div class="branch-card">
+            <h3>Batangas City</h3>
+            <p>📍Inosloban Lipa City Batangas</p>
+            <p>🕒 Open daily: 10 AM – 9 PM</p>
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15485.81635039131!2d121.1602387595634!3d13.99106810403131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6b89e3a814d1%3A0x97baeb904627b15!2sInosloban%2C%20Lipa%20City%2C%20Batangas!5e0!3m2!1sen!2sph!4v1754615936811!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+
+            <div class="branch-card">
+              <h3>Calangay, San Nicolas</h3>
+              <p>📍 Calangay, San Nicolas Batangas</p>
+              <p>🕒 10AM – 9PM</p>
+              <div class="map-container">
+                <<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15490.631690287426!2d120.9318289455632!3d13.91938368384062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd0b70400dbed3%3A0xd0b9417031b8d2b1!2sCalangay%20Elementary%20School!5e0!3m2!1sen!2sph!4v1754621631007!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+
+        <div class="branch-info active" id="qzon">
+          <h2>Quezon Branch</h2>
+
+          <div class="branch-card">
+          <h3>Sta Veronica Village</h3>
+          <p>📍Lot 6 Blk 2 Sta Veronica Village University Site Lucena City, Quezon</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30978.872427138118!2d121.59646619732221!3d13.937214084331478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd4cb21f84fb03%3A0xa0f5a25f824e5fc3!2sSta.%20Veronica%20Village!5e0!3m2!1sen!2sph!4v1754621719039!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-info active" id="cavite">
+          <h2>Cavite Branch</h2>
+
+          <div class="branch-card">
+          <h3>Sample</h3>
+          <p>📍Lot 6 Blk 2 Sta Veronica Village University Site Lucena City, Quezon</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30978.872427138118!2d121.59646619732221!3d13.937214084331478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd4cb21f84fb03%3A0xa0f5a25f824e5fc3!2sSta.%20Veronica%20Village!5e0!3m2!1sen!2sph!4v1754621719039!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-info active" id="laguna">
+          <h2>Laguna Branch</h2>
+
+          <div class="branch-card">
+          <h3>Kapatalan Siniloan</h3>
+          <p>📍Lot 6 Blk 2 Sta Veronica Village University Site Lucena City, Quezon</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123629.41025925861!2d121.42512243296065!3d14.460609221981953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397f3b808d891e9%3A0xa9ac5ba2f4eb87a7!2sKapatalan%2C%20Barangay%20Hall%20(Siniloan)!5e0!3m2!1sen!2sph!4v1754623212346!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="branch-card">
+          <h3>Majada Out</h3>
+          <p>📍124 Majada Out, Calamba City, Laguna</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15471.559798249473!2d121.10280214565194!3d14.201221579824344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd631280f45d87%3A0xb01409c62fa88c8d!2s124%20Majada%20Out%20Rd%2C%20Calamba%2C%204027%20Laguna!5e0!3m2!1sen!2sph!4v1754623301039!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="main-content">
+        <div class="branch-info" id="pagadian">
+          <h2>Zamboanga Branch</h2>
+
+          <div class="branch-card">
+            <h3>San Jose District</h3>
+            <p>📍FS Pajares Avenue, San Jose District Pagadian City Provincial Complex, Dao Pagadian City</p>
+            <p>🕒 Open daily: 10 AM – 9 PM</p>
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?..." loading="lazy" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="branch-info" id="bukidnon">
+        <h2>Cagayan De Oro Branches</h2>
+
+        <div class="branch-card">
+          <h3>Bukidnon</h3>
+          <p>📍P4-B NORTE, DON CARLOS, BUKIDNON, MINDANAO</p>
+          <p>🕒 Open daily: 10 AM – 9 PM</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15815.949271386446!2d124.98154594404923!3d7.684508677319922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32ff31fa6f7ff47f%3A0x8990e1a0b9227417!2sP-4b%20Norte%20Don%20Carlos%20Bukidnon!5e0!3m2!1sen!2sph!4v1754624809517!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
   </div>
 
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-column">
-        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="footer-logo">
+        <img src="sugar1.png" alt="Sugar Cafe Logo" class="footer-logo">
         <div class="footer-socials">
           <a href="#"><img src="img/icon-fb.png" alt="Facebook"></a>
           <a href="#"><img src="img/icon-ig.png" alt="Instagram"></a>
-          <a href="#"><img src="img/icon-x.png" alt="Twitter"></a>
         </div>
       </div>
       <div class="footer-column">
         <h4>Contact Us</h4>
-        <p>331 Fernando Poe Jr. Quezon City, PH</p>
-        <p>sugarcafe2023@gmail.com</p>
+        <p>
+          <a href="https://www.google.com/maps?q=123+Milk+Tea+Street,+Sweet+City" 
+             target="_blank" 
+             style="color: inherit; text-decoration: underline;">
+            123 Milk Tea Street, Sweet City
+          </a>
+        </p>
+        <a href="mailto:sugarcafe2023@gmail.com" style="text-decoration: underline; color: black;">sugarcafe2023@gmail.com
+      </a>
       </div>
       <div class="footer-column">
         <h4>Quick Links</h4>
@@ -243,6 +462,7 @@
         </ul>
       </div>
     </div>
+  </div>
   </footer>
 
   <script>
@@ -261,7 +481,7 @@
 
     // 4. Highlight the clicked city button
     const cityButton = Array.from(document.querySelectorAll('.region-column button'))
-      .find(btn => btn.textContent.toLowerCase().includes(city.replace(/city/i, '').toLowerCase()));
+      .find(btn => btn.getAttribute('onclick') === `showBranches('${city}')`);
     if (cityButton) {
       cityButton.classList.add('active-city');
     }

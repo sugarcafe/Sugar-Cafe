@@ -1,103 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - Sugar Cafe</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .main{
+      flex: 1;
+    }
+    footer{
+      margin-top: auto;
+    }
+    .menu-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #D2B48C;
+  color: black;
+  padding: 10px;
+}
+
+.category {
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #C8A27E;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.category:hover {
+  background: #D2B48C;
+}
+
+/* Menu Items Grid */
+.menu-items {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktop - 4 per row */
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 200px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.menu-section {
+  padding-top: 20px;
+}
+
+.menu-section img {
+  margin-top: 20px;
+}
+
+.drink-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.drink-card img {
+  width: 100%;
+  height: auto;
+}
+
+.drink-card p {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.category.active {
+  font-weight: bold;
+  background: #B58969; /* mas dark shade para halata */
+}
+
+
+/* Mobile View: 2 columns + dropdown */
+@media (max-width: 768px) {
+  .menu-container {
+    flex-direction: column;
+  }
+
+  .menu-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar {
+    display: none; /* Hide sidebar sa mobile */
+  }
+
+  /* Dropdown for category filter sa mobile */
+  .category-dropdown {
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #D2B48C; /* Pwede mong palitan depende sa theme */
+    position: absolute;
+    top: 60px; /* depende sa taas ng header */
+    right: 0;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+}
+
+/* Desktop View - hide dropdown */
+@media (min-width: 769px) {
+  .category-dropdown {
+    display: none;
+  }
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+    .menu-items img {
+        width: 180px;  /* pwede mo adjust */
+        height: auto;  /* para hindi ma-distort */
+    }
+}
+
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="index.html" class="logo">
-        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="logo-img">
-        <span>Sugar Cafe</span>
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Sugar Cafe Logo" class="logo-img">
+      <span></span>
+    </a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="branches.html">Branches</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<div class="hero hero-menu">
+  <div class="hero-overlay">
+    <h1>MENU</h1>
+  </div>
+</div>
+
+<div class="menu-container" style="display: flex;">
+  
+  <!-- Desktop Sidebar -->
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <div class="category" onclick="filterMenu('all')">All</div>
+    <div class="category" onclick="filterMenu('milk-tea')">Milk Tea</div>
+    <div class="category" onclick="filterMenu('thai')">Thai Sticky Milk</div>
+    <div class="category" onclick="filterMenu('cheesecake')">Cheesecake Series</div>
+    <div class="category" onclick="filterMenu('fruit-yogurt')">Fruit Yogurt</div>
+    <div class="category" onclick="filterMenu('fruit-tea')">Fruit Tea</div>
+    <div class="category" onclick="filterMenu('frappe')">Frappe Overload</div>
+    <div class="category" onclick="filterMenu('iced-coffee')">Iced Coffee</div>
+    <div class="category" onclick="filterMenu('hot-coffee')">Hot Drinks</div>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <select class="category-dropdown" onchange="filterMenu(this.value)">
+    <option value="all">Select a Category</option>
+    <option value="milk-tea">Milk Tea</option>
+    <option value="thai">Thai Sticky Milk</option>
+    <option value="cheesecake">Cheesecake Series</option>
+    <option value="fruit-yogurt">Fruit Yogurt</option>
+    <option value="fruit-tea">Fruit Tea</option>
+    <option value="frappe">Frappe Overload</option>
+    <option value="iced-coffeet">Iced Coffee</option>
+    <option value="hot-coffee">Hot Drinks</option>
+  </select>
+
+  <!-- Menu Items -->
+  <div class="menu-items">
+    <div class="drink-card milk-tea">
+      <img src="h1.png" alt="Milk Tea 1">
+      <p>Classic Milk Tea</p>
+    </div>
+    <div class="drink-card milk-tea">
+      <img src="h1.png" alt="Milk Tea 2">
+      <p>Okinawa Milk Tea</p>
+    </div>
+    <div class="drink-card milk-tea">
+      <img src="h1.png" alt="Milk Tea 3">
+      <p>Wintermelon Milk Tea</p>
+    </div>
+    <div class="drink-card fruit-tea">
+      <img src="h1.png" alt="Fruit Tea 1">
+      <p>Mango Fruit Tea</p>
+    </div>
+    <div class="drink-card thai">
+      <img src="h1.png" alt="Yakult 1">
+      <p>Lemon Yakult</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <img src="sugar1.png" alt="Sugar Cafe Logo" class="footer-logo">
+      <div class="footer-socials">
+        <a href="#"><img src="img/icon-fb.png" alt="Facebook"></a>
+        <a href="#"><img src="img/icon-ig.png" alt="Instagram"></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <p>
+          <a href="https://www.google.com/maps?q=123+Milk+Tea+Street,+Sweet+City" 
+             target="_blank" 
+             style="color: inherit; text-decoration: underline;">
+            123 Milk Tea Street, Sweet City
+          </a>
+        </p>
+      <a href="mailto:sugarcafe2023@gmail.com" style="text-decoration: underline; color: black;">sugarcafe2023@gmail.com
       </a>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
         <li><a href="about.html">About</a></li>
-        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="menu.html">Menu</a></li>
         <li><a href="branches.html">Branches</a></li>
         <li><a href="careers.html">Careers</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" style="background-image: url('images/menu-banner.jpg');">
-    <div class="hero-overlay">
-      <h1>Our Menu</h1>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- Menu Content -->
-  <section class="page-content menu">
-    <div class="menu-category">
-      <h3>Milk Tea</h3>
-      <div class="items">
-        <img src="images/milktea.jpg" alt="Milk Tea" />
-        <img src="images/milktea.jpg" alt="Milk Tea" />
-      </div>
-    </div>
+<script>
+function filterMenu(category) {
+  let items = document.querySelectorAll('.drink-card');
+  items.forEach(item => {
+    if (category === 'all') {
+      item.style.display = 'block';
+    } else {
+      item.style.display = item.classList.contains(category) ? 'block' : 'none';
+    }
+  });
 
-    <div class="menu-category">
-      <h3>Fruit Tea</h3>
-      <div class="items">
-        <img src="images/fruittea.jpg" alt="Fruit Tea" />
-        <img src="images/fruittea.jpg" alt="Fruit Tea" />
-      </div>
-    </div>
+  // Remove 'active' sa lahat ng desktop categories
+  document.querySelectorAll('.sidebar .category').forEach(cat => {
+    cat.classList.remove('active');
+  });
 
-    <div class="menu-category">
-      <h3>Yakult Series</h3>
-      <div class="items">
-        <img src="images/yakult.jpg" alt="Yakult" />
-        <img src="images/yakult.jpg" alt="Yakult" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="footer-logo">
-        <div class="footer-socials">
-          <a href="#"><img src="img/icon-fb.png" alt="Facebook"></a>
-          <a href="#"><img src="img/icon-ig.png" alt="Instagram"></a>
-          <a href="#"><img src="img/icon-x.png" alt="Twitter"></a>
-        </div>
-      </div>
-      <div class="footer-column">
-        <h4>Contact Us</h4>
-        <p>331 Fernando Poe Jr. Quezon City, PH</p>
-        <p>sugarcafe2023@gmail.com</p>
-      </div>
-      <div class="footer-column">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="branches.html">Branches</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  <script>
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('nav-links');
-
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('show');
-    });
+  // Lagay 'active' sa piniling desktop category kung may match
+  let activeCat = document.querySelector(`.sidebar .category[onclick="filterMenu('${category}')"]`);
+  if (activeCat) {
+    activeCat.classList.add('active');
   }
+
+  // Sync sa dropdown kung mobile
+  let dropdown = document.querySelector('.category-dropdown');
+  if (dropdown && dropdown.value !== category) {
+    dropdown.value = category;
+  }
+
+  function toggleDropdownVisibility() {
+  const dropdown = document.querySelector('.category-dropdown');
+  dropdown.style.display = window.innerWidth > 768 ? 'none' : 'block';
+}
+
+window.addEventListener('resize', toggleDropdownVisibility);
+window.addEventListener('load', toggleDropdownVisibility);
+
+}
+
+// ✅ Hamburger toggle dapat nasa labas ng filterMenu
+document.getElementById('menu-toggle').addEventListener('click', function() {
+  const navLinks = document.getElementById('nav-links');
+  navLinks.classList.toggle('active');
+});
 </script>
+<script>
+function toggleDropdownVisibility() {
+  const dropdown = document.querySelector('.category-dropdown');
+  if (window.innerWidth > 768) {
+    dropdown.style.display = 'none';
+  } else {
+    dropdown.style.display = 'block';
+  }
+}
+
+window.addEventListener('resize', toggleDropdownVisibility);
+window.addEventListener('load', toggleDropdownVisibility);
+</script>
+
 
 </body>
 </html>

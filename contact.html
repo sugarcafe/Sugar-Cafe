@@ -12,8 +12,8 @@
   <header>
     <nav>
       <a href="index.html" class="logo">
-        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="logo-img">
-        <span>Sugar Cafe</span>
+        <img src="logo.png" alt="Sugar Cafe Logo" class="logo-img">
+        <span></span>
       </a>
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <ul class="nav-links" id="nav-links">
@@ -21,42 +21,91 @@
         <li><a href="menu.html">Menu</a></li>
         <li><a href="branches.html">Branches</a></li>
         <li><a href="careers.html">Careers</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" style="background-image: url('images/contact-banner.jpg');">
+  <div class="hero hero-contact">
     <div class="hero-overlay">
-      <h1>Contact Us</h1>
+      <h1>CONTACT US</h1>
     </div>
-  </section>
+  </div>
 
   <!-- Contact Content -->
-  <section class="page-content contact">
-    <div class="contact-details">
-      <p><strong>Email:</strong> sugarcafe@email.com</p>
-      <p><strong>Phone:</strong> +63 912 345 6789</p>
-      <p><strong>Address:</strong> 123 Milk Tea Street, Sweet City</p>
+<section class="page-content contact">
+  <div class="contact-details">
+
+    <!-- Phone Number -->
+    <p>
+      <strong>📞 Phone:</strong>
+      <a href="tel:+639123456789">+63 912 345 6789</a>
+    </p>
+
+    <!-- Email -->
+  <p style="display: flex; align-items: center;">
+  <span style="margin-right: 6px;">📧</span>
+  <strong style="margin-right: 8px;">Email:</strong>
+  <a href="mailto:sugarcafe2023@gmail.com" style="text-decoration: underline; color: #0084FF;">
+    sugarcafe2023@gmail.com
+  </a>
+</p>
+
+    <!-- Messenger Link -->
+    <p style="display: flex; align-items: center;">
+  <!-- Messenger Icon SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36" style="margin-right: 6px;">
+    <path fill="#0084FF" d="M18 0C8.058 0 0 7.163 0 16c0 4.99 2.457 9.46 6.413 12.446v6.008c0 .59.646.942 1.148.633l5.671-3.39a18.03 18.03 0 004.768.637c9.942 0 18-7.163 18-16S27.942 0 18 0z"/>
+    <path fill="#fff" d="M29 11.5l-6.625 10.313c-.326.507-1.01.648-1.515.32l-4.86-3.24a.998.998 0 00-1.09.002l-5.785 3.776c-.504.33-1.176.182-1.512-.324L7 12.4c-.333-.502.021-1.175.6-1.175h6.375a1 1 0 01.832.445l3.049 4.508a1 1 0 001.679.021L22.684 11.5H28.4c.582 0 .936.68.6 1.175z"/>
+  </svg>
+
+  <!-- Messenger Label -->
+  <span style="margin-right: 8px; font-weight: bold;">Messenger:</span>
+
+  <!-- Chat Link in Blue -->
+  <a href="https://m.me/YourPageUsername" target="_blank" style="text-decoration: underline; color: #0084FF;">
+    Chat with us on Messenger
+  </a>
+</p>
+
+<p><strong>📍Address:</strong> 123 Milk Tea Street, Sweet City</p>
+    <!-- Google Map Embed -->
+    <div class="map-container" style="margin-top:15px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.874168941637!2d121.058342!3d14.635505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7bba6a5f1e1%3A0x2d9bfb47e0ac9e5f!2sSample%20Cafe!5e0!3m2!1sen!2sph!4v1690101012345!5m2!1sen!2sph"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-column">
-        <img src="Sugar.jpg" alt="Sugar Cafe Logo" class="footer-logo">
+        <img src="sugar1.png" alt="Sugar Cafe Logo" class="footer-logo">
         <div class="footer-socials">
           <a href="#"><img src="img/icon-fb.png" alt="Facebook"></a>
           <a href="#"><img src="img/icon-ig.png" alt="Instagram"></a>
-          <a href="#"><img src="img/icon-x.png" alt="Twitter"></a>
         </div>
       </div>
       <div class="footer-column">
         <h4>Contact Us</h4>
-        <p>331 Fernando Poe Jr. Quezon City, PH</p>
-        <p>sugarcafe2023@gmail.com</p>
+        <p>
+          <a href="https://www.google.com/maps?q=123+Milk+Tea+Street,+Sweet+City" 
+             target="_blank" 
+             style="color: inherit; text-decoration: underline;">
+            123 Milk Tea Street, Sweet City
+          </a>
+        </p>
+        <a href="mailto:sugarcafe2023@gmail.com" style="text-decoration: underline; color: black;">sugarcafe2023@gmail.com
+        </a>
       </div>
       <div class="footer-column">
         <h4>Quick Links</h4>
@@ -65,20 +114,44 @@
           <li><a href="menu.html">Menu</a></li>
           <li><a href="branches.html">Branches</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </footer>
-  <script>
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('nav-links');
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('show');
-    });
-  }
-</script>
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "YOUR_FACEBOOK_PAGE_ID");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml: true,
+        version: 'v18.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Mobile Nav Toggle -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('show');
+      });
+    }
+  </script>
+
 </body>
 </html>

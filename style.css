@@ -105,12 +105,14 @@ footer {
 
 .footer-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;   /* ilalagay lahat sa gitna */
+  align-items: center;       /* vertical center */
+  gap: 60px;                 /* pagitan ng columns */
+  flex-wrap: wrap;           /* para responsive sa mobile */
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+  text-align: center;        /* text alignment center */
 }
-
 .footer-column {
   flex: 1 1 250px;
   margin: 10px;
@@ -349,11 +351,14 @@ nav {
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  text-align: center;
+  justify-content: center;   /* ilalagay lahat sa gitna */
+  align-items: center;       /* vertical center */
+  gap: 60px;                 /* pagitan ng columns */
+  flex-wrap: wrap;           /* para responsive sa mobile */
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;        /* text alignment center */
 }
-
 .footer-column {
   flex: 1 1 200px;
   margin: 10px;
@@ -559,12 +564,15 @@ body {
     }
     .footer-container {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      justify-content: center;   /* ilalagay lahat sa gitna */
+      align-items: center;       /* vertical center */
+      gap: 60px;                 /* pagitan ng columns */
+      flex-wrap: wrap;           /* para responsive sa mobile */
       max-width: 1200px;
       margin: auto;
-      text-align: center;
+      text-align: center;        /* text alignment center */
     }
+
     .footer-column {
       flex: 1;
       min-width: 200px;

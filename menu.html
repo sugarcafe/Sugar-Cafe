@@ -81,6 +81,8 @@
 .drink-card img {
   width: 100%;
   height: auto;
+  object-fit: contain;
+  background-color: #fff;
 }
 
 .drink-card p {
@@ -151,7 +153,7 @@
 
 @media (min-width: 1024px) {
     .menu-items img {
-        width: 180px;  /* pwede mo adjust */
+        width: 70%;  /* pwede mo adjust */
         height: auto;  /* para hindi ma-distort */
     }
 }
@@ -191,50 +193,506 @@
     <h2>Menu</h2>
     <div class="category" onclick="filterMenu('all')">All</div>
     <div class="category" onclick="filterMenu('milk-tea')">Milk Tea</div>
+    <div class="category" onclick="filterMenu('float-milktea')">Floats Milktea</div>
     <div class="category" onclick="filterMenu('thai')">Thai Sticky Milk</div>
     <div class="category" onclick="filterMenu('cheesecake')">Cheesecake Series</div>
     <div class="category" onclick="filterMenu('fruit-yogurt')">Fruit Yogurt</div>
     <div class="category" onclick="filterMenu('fruit-tea')">Fruit Tea</div>
-    <div class="category" onclick="filterMenu('frappe')">Frappe Overload</div>
+    <div class="category" onclick="filterMenu('fruit-season')">Fruits Of Season</div>
+    <div class="category" onclick="filterMenu('float-fruit-soda')">Floats Fruit Soda</div>
+    <div class="category" onclick="filterMenu('float-soda')">Floats Soda</div>
+    <div class="category" onclick="filterMenu('frappe')">Frappe</div>
+    <div class="category" onclick="filterMenu('frappe-overload')">Frappe Overload</div>
     <div class="category" onclick="filterMenu('iced-coffee')">Iced Coffee</div>
+    <div class="category" onclick="filterMenu('float-iced')">Float Iced Coffee</div>
+    <div class="category" onclick="filterMenu('float-latte')">Float K Latte</div>
+    <div class="category" onclick="filterMenu('k-latte')">K Latte</div>
     <div class="category" onclick="filterMenu('hot-coffee')">Hot Drinks</div>
+    <div class="category" onclick="filterMenu('mango')">Mango Series</div>
+    <div class="category" onclick="filterMenu('seasalt & americano')">Seasalt & Americano Orange</div>
+    <div class="category" onclick="filterMenu('tiramisu')">Tiramisu</div>
   </div>
 
   <!-- Mobile Dropdown -->
   <select class="category-dropdown" onchange="filterMenu(this.value)">
     <option value="all">Select a Category</option>
     <option value="milk-tea">Milk Tea</option>
+    <option value="float-milktea">Floats Milktea</option>
     <option value="thai">Thai Sticky Milk</option>
     <option value="cheesecake">Cheesecake Series</option>
     <option value="fruit-yogurt">Fruit Yogurt</option>
     <option value="fruit-tea">Fruit Tea</option>
-    <option value="frappe">Frappe Overload</option>
-    <option value="iced-coffeet">Iced Coffee</option>
+    <option value="fruit-season">Fruits Of Season</option>
+    <option value="float-fruit-soda">Floats Fruit Soda</option>
+    <option value="float-soda">Floats Soda</option>
+    <option value="frappe">Frappe</option>
+    <option value="frappe-overload">Frappe Overload</option>
+    <option value="iced-coffee">Iced Coffee</option>
+    <option value="float-iced">Float Iced Coffee</option>
+    <option value="float-latte">Float K Latte</option>
+    <option value="k-latte">K Latte</option>
     <option value="hot-coffee">Hot Drinks</option>
+    <option value="mango">Mango Series</option>
+    <option value="seasalt & americano">Seasalt & Americano Orange</option>
+    <option value="tiramisu">Tiramisu</option>
   </select>
 
   <!-- Menu Items -->
   <div class="menu-items">
-    <div class="drink-card milk-tea">
-      <img src="h1.png" alt="Milk Tea 1">
-      <p>Classic Milk Tea</p>
+    <!-- <div class="drink-card milk-tea">
+      <img src="Chocolate.png" alt="Milk Tea 1">
+      <p>Chocolate</p>
     </div>
     <div class="drink-card milk-tea">
-      <img src="h1.png" alt="Milk Tea 2">
-      <p>Okinawa Milk Tea</p>
+      <img src="Hokkaido.png" alt="Milk Tea 2">
+      <p>Hokkaido</p>
     </div>
     <div class="drink-card milk-tea">
-      <img src="h1.png" alt="Milk Tea 3">
-      <p>Wintermelon Milk Tea</p>
+      <img src="Matcha.png" alt="Milk Tea 3">
+      <p>Matcha</p>
     </div>
-    <div class="drink-card fruit-tea">
-      <img src="h1.png" alt="Fruit Tea 1">
-      <p>Mango Fruit Tea</p>
+    <div class="drink-card milk-tea">
+      <img src="Okinawa.png" alt="Milk Tea 4">
+      <p>Okinawa</p>
+    </div>
+    <div class="drink-card milk-tea">
+      <img src="Red Velvet.png" alt="Milk Tea 5">
+      <p>Red Velvet</p>
+    </div>
+    <div class="drink-card milk-tea">
+      <img src="Wintermelon.png" alt="Milk Tea 6">
+      <p>Wintermelon</p>
+    </div> -->
+
+
+    <!-- Floats - Milktea -->
+    <div class="drink-card float-milktea">
+      <img src="Milktea - Chocolate.png" alt="Float 1">
+      <p>Milktea - Chocolate</p>
+    </div>
+    <div class="drink-card float-milktea">
+      <img src="Milktea - Hokkaido.png" alt="Float 2">
+      <p>Milktea - Hokkaido</p>
+    </div>
+    <div class="drink-card float-milktea">
+      <img src="Milktea - Matcha.png" alt="Float 3">
+      <p>Milktea - Matcha</p>
+    </div>
+    <div class="drink-card float-milktea">
+      <img src="Milktea - Okinawa.png" alt="Float 4">
+      <p>Milktea - Okinawa</p>
+    </div>
+    <div class="drink-card float-milktea">
+      <img src="Milktea - Redvelvet.png" alt="Float 5">
+      <p>Milktea - Redvelvet</p>
+    </div>
+    <div class="drink-card float-milktea">
+      <img src="Milktea - Wintermelon.png" alt="Float 6">
+      <p>Milktea - Wintermenlon</p>
+    </div>
+
+
+    <!-- Thai Milk Tea -->
+    <div class="drink-card thai">
+      <img src="Sticky Milk_Avocado.png" alt="Thai 1">
+      <p>Sticky Milk Avocado</p>
     </div>
     <div class="drink-card thai">
-      <img src="h1.png" alt="Yakult 1">
-      <p>Lemon Yakult</p>
+      <img src="Sticky Milk_Buko Pandan.png" alt="Thai 2">
+      <p>Sticky Milk Buko Pandan</p>
     </div>
+    <div class="drink-card thai">
+      <img src="Sticky Milk_Choco Fudge.png" alt="Thai 3">
+      <p>Sticky Milk Choco Fudge</p>
+    </div>
+    <div class="drink-card thai">
+      <img src="Sticky Milk_Coffee Crumble.png" alt="Thai 4">
+      <p>Sticky Milk Coffee Crumble</p>
+    </div>
+    <div class="drink-card thai">
+      <img src="Sticky Milk_Leche Flan.png" alt="Thai 5">
+      <p>Sticky Milk Leche Flan</p>
+    </div>
+    <div class="drink-card thai">
+      <img src="Sticky Milk_Mango.png" alt="Thai 6">
+      <p>Sticky Milk Mango</p>
+    </div>
+    <div class="drink-card thai">
+      <img src="Sticky Milk_Melon.png" alt="Thai 7">
+      <p>Sticky Milk Melon</p>
+    </div>
+    <div class="drink-card thai">
+      <img src="Sticky Milk_Mocha.png" alt="Thai 8">
+      <p>Sticky Milk Mocha</p>
+    </div>
+    <div class="drink-card thai">
+      <img src="Sticky Milk_Strawberry.png" alt="Thai 9">
+      <p>Sticky Milk Strawberry</p>
+    </div>
+    <div class="drink-card thai">
+      <img src="Sticky Milk_ube.png" alt="Thai 10">
+      <p>Sticky Milk Ube</p>
+    </div>
+
+
+    <!-- Cheesecake -->
+    <div class="drink-card cheesecake">
+      <img src="Cheesecake.png" alt="Cheeesecake 1">
+      <p>Cheesecake</p>
+    </div>
+    <div class="drink-card cheesecake">
+      <img src="Chocolate Cheesecake.png" alt="Cheeesecake 2">
+      <p>Chocolate Cheesecake</p>
+    </div>
+    <div class="drink-card cheesecake">
+      <img src="Oreo Cheesecake.png" alt="Cheeesecake 3">
+      <p>Oreo Cheesecake</p>
+    </div>
+    <div class="drink-card cheesecake">
+      <img src="Oreo Matcha Cheesecake.png" alt="Cheeesecake 4">
+      <p>Oreo Matcha Cheesecake</p>
+    </div>
+    <div class="drink-card cheesecake">
+      <img src="Red Velvet Cheesecake.png" alt="Cheeesecake 5">
+      <p>Red Velvet Cheesecake</p>
+    </div>
+
+
+    <!-- Fruit Yogurt -->
+    <div class="drink-card fruit-yogurt">
+      <img src="Fruit Yogurt_Apple Green.png" alt="Fruit Yogurt 1">
+      <p>Fruit Yogurt Apple Green</p>
+    </div>
+    <div class="drink-card fruit-yogurt">
+      <img src="Fruit Yogurt_Blue Lemonade.png" alt="Fruit Yogurt 2">
+      <p>Fruit Yogurt Blue Lemonade</p>
+    </div>
+    <div class="drink-card fruit-yogurt">
+      <img src="Fruit Yogurt_Blueberry.png" alt="Fruit Yogurt 3">
+      <p>Fruit Yogurt Blueberry</p>
+    </div>
+    <div class="drink-card fruit-yogurt">
+      <img src="Fruit Yogurt_Four Seasons.png" alt="Fruit Yogurt 4">
+      <p>Fruit Yogurt Seasons</p>
+    </div>
+    <div class="drink-card fruit-yogurt">
+      <img src="Fruit Yogurt_Lychee.png" alt="Fruit Yogurt 5">
+      <p>Fruit Yogurt Lychee</p>
+    </div>
+    <div class="drink-card fruit-yogurt">
+      <img src="Fruit Yogurt_Strawberry.png" alt="Fruit Yogurt 6">
+      <p>Fruit Yogurt Strawberry</p>
+    </div>
+
+
+    <!-- Fruit Tea -->
+    <div class="drink-card fruit-tea">
+      <img src="apple gren fruit tea.png" alt="Fruit Tea 1">
+      <p>Fruit Tea Apple Green</p>
+    </div>
+    <div class="drink-card fruit-tea">
+      <img src="bluebrry fruit tea.png" alt="Fruit Tea 2">
+      <p>Fruit Tea Blueberry</p>
+    </div>
+    <div class="drink-card fruit-tea">
+      <img src="four season fruit tea.png" alt="Fruit Tea 3">
+      <p>Fruit Tea Four Season</p>
+    </div>
+    <div class="drink-card fruit-tea">
+      <img src="kiwi fruit tea.png" alt="Fruit Tea 4">
+      <p>Fruit Tea Kiwi</p>
+    </div>
+    <div class="drink-card fruit-tea">
+      <img src="lychee fruit tea.png" alt="Fruit Tea 5">
+      <p>Fruit Tea Lychee</p>
+    </div>
+    <div class="drink-card fruit-tea">
+      <img src="orange fruit tea.png" alt="Fruit Tea 6">
+      <p>Fruit Tea Orange</p>
+    </div>
+    <div class="drink-card fruit-tea">
+      <img src="Passion fruit tea.png" alt="Fruit Tea 7">
+      <p>Fruit Tea Passion</p>
+    </div>
+    <div class="drink-card fruit-tea">
+      <img src="strawberry fruit tea.png" alt="Fruit Tea 8">
+      <p>Fruit Tea Strawberry</p>
+    </div>
+
+
+    <!-- Fruit Of Season -->
+    <div class="drink-card fruit-season">
+      <img src="Avocado.png" alt="Fruit Season 1">
+      <p>Fruit Of Season Avocado</p>
+    </div>
+    <div class="drink-card fruit-season">
+      <img src="Melon.png" alt="Fruit Season 2">
+      <p>Fruit Of Season Melon</p>
+    </div>
+    <div class="drink-card fruit-season">
+      <img src="Taro.png" alt="Fruit Season 3">
+      <p>Fruit Of Season Taro</p>
+    </div>
+    <div class="drink-card fruit-season">
+      <img src="Ube.png" alt="Fruit Season 4">
+      <p>Fruit Of Season Ube</p>
+    </div>
+
+
+    <!-- Float Fruit Soda -->
+    <div class="drink-card float-fruit-soda">
+      <img src="Fruit Soda - Blueberry.png" alt="Float Fruit Soda 1">
+      <p>Float Fruit Soda Bluerry</p>
+    </div>
+    <div class="drink-card float-fruit-soda">
+      <img src="Fruit Soda - Four Seasons.png" alt="Float Fruit Soda 2">
+      <p>Float Fruit Soda Four Season</p>
+    </div>
+    <div class="drink-card float-fruit-soda">
+      <img src="Fruit Soda - Lychee.png" alt="Float Fruit Soda 3">
+      <p>Float Fruit Soda Lychee</p>
+    </div>
+    <div class="drink-card float-fruit-soda">
+      <img src="Fruit Soda - Strawberry.png" alt="Float Fruit Soda 4">
+      <p>Float Fruit Soda Strawberry</p>
+    </div>
+
+
+    <!-- Frappe -->
+    <div class="drink-card frappe">
+      <img src="dark oreo.png" alt="Frappe 1">
+      <p>Frappe Dark Oreo</p>
+    </div>
+    <div class="drink-card frappe">
+      <img src="java chip.png" alt="Frappe 2">
+      <p>Frappe Java Chip</p>
+    </div>
+    <div class="drink-card frappe">
+      <img src="mango lava.png" alt="Frappe 3">
+      <p>Frappe Mango Lava</p>
+    </div>
+    <div class="drink-card frappe">
+      <img src="matcha cream.png" alt="Frappe 4">
+      <p>Frappe Matcha Cream</p>
+    </div>
+    <div class="drink-card frappe">
+      <img src="strawberry.png" alt="Frappe 5">
+      <p>Frappe Strawberry</p>
+    </div>
+
+
+    <!-- Frappe Overload -->
+    <div class="drink-card frappe-overload">
+      <img src="Biscoff.png" alt="Frappe Overload 1">
+      <p>Frappe Overload Biscoff</p>
+    </div>
+    <div class="drink-card frappe-overload">
+      <img src="Blueberry.png" alt="Frappe Overload 2">
+      <p>Frappe Overload Blueberry</p>
+    </div>
+    <div class="drink-card frappe-overload">
+      <img src="Coffee Jelly.png" alt="Frappe Overload 3">
+      <p>Frappe Overload Coffee Jelly</p>
+    </div>
+    <div class="drink-card frappe-overload">
+      <img src="Jva Chip.png" alt="Frappe Overload 4">
+      <p>Frappe Overload Java Chip</p>
+    </div>
+    <div class="drink-card frappe-overload">
+      <img src="Mango Graham.png" alt="Frappe Overload 5">
+      <p>Frappe Overload Mango Graham</p>
+    </div>
+    <div class="drink-card frappe-overload">
+      <img src="Matcha overload.png" alt="Frappe Overload 6">
+      <p>Frappe Overload Matcha</p>
+    </div>
+    <div class="drink-card frappe-overload">
+      <img src="Oreo.png" alt="Frappe Overload 7">
+      <p>Frappe Overload Oreo</p>
+    </div>
+    <div class="drink-card frappe-overload">
+      <img src="Strawberry overload.png" alt="Frappe Overload 8">
+      <p>Frappe Overload Strawberry</p>
+    </div>
+    <div class="drink-card frappe-overload">
+      <img src="Ube overload.png" alt="Frappe Overload 9">
+      <p>Frappe Overload Ube</p>
+    </div>
+
+
+    <!-- Iced Coffee -->
+    <div class="drink-card iced-coffee">
+      <img src="Iced Coffee_French Vanilla.png" alt="Iced Coffee 1">
+      <p>Iced Cofee French Vanilla</p>
+    </div>
+    <div class="drink-card iced-coffee">
+      <img src="Iced Coffee_Hazelnut.png" alt="Iced Coffee 2">
+      <p>Iced Cofee Hazelnut</p>
+    </div>
+    <div class="drink-card iced-coffee">
+      <img src="Iced Coffee_Iced Americano.png" alt="Iced Coffee 3">
+      <p>Iced Cofee Iced Americano</p>
+    </div>
+    <div class="drink-card iced-coffee">
+      <img src="Iced Coffee_Salted Caramel.png" alt="Iced Coffee 4">
+      <p>Iced Cofee Salted Caramel</p>
+    </div>
+    <div class="drink-card iced-coffee">
+      <img src="Iced Coffee_Spanish Latte.png" alt="Iced Coffee 5">
+      <p>Iced Cofee Spanish Latte</p>
+    </div>
+
+
+    <!-- Float Iced Coffee -->
+    <div class="drink-card float-iced">
+      <img src="Coffee - French Vanilla.png" alt="Float Iced Coffee 1">
+      <p>FLoat Iced Cofee French Vanilla</p>
+    </div>
+    <div class="drink-card iced-coffee">
+      <img src="Coffee - Hazelnut.png" alt="Float Iced Coffee 2">
+      <p>FLoat Iced Cofee Hazelnut</p>
+    </div>
+    <div class="drink-card iced-coffee">
+      <img src="Coffee - Iced Americano.png" alt="Float Iced Coffee 3">
+      <p>FLoat Iced Cofee Iced Americano</p>
+    </div>
+    <div class="drink-card iced-coffee">
+      <img src="Coffee - Salted Caramel.png" alt="Float Iced Coffee 4">
+      <p>FLoat Iced Cofee Salted Caramel</p>
+    </div>
+    <div class="drink-card iced-coffee">
+      <img src="Coffee - Spanish Latte.png" alt="Float Iced Coffee 5">
+      <p>FLoat Iced Cofee Spanish Latte</p>
+    </div>
+
+
+    <!-- Float Latte -->
+    <div class="drink-card float-latte">
+      <img src="Latte - Avocado.png" alt="Latte 1">
+      <p>Float Latte Avocado</p>
+    </div>
+    <div class="drink-card float-latte">
+      <img src="Latte - Melon.png" alt="Latte 2">
+      <p>Float Latte Melon</p>
+    </div>
+    <div class="drink-card float-latte">
+      <img src="Latte - Ube.png" alt="Latte 3">
+      <p>Float Latte Ube</p>
+    </div>
+
+
+    <!-- K Latte -->
+    <div class="drink-card k-latte">
+      <img src="Bubble Gum.png" alt="K Latte 1">
+      <p>K Latte Bubble Gum</p>
+    </div>
+    <div class="drink-card k-latte">
+      <img src="Buko Pandan.png" alt="K Latte 2">
+      <p>K Latte Buko Pandan</p>
+    </div>
+    <div class="drink-card k-latte">
+      <img src="K Latte_Blueberry.png" alt="K Latte 3">
+      <p>K Latte Bluebery</p>
+    </div>
+    <div class="drink-card k-latte">
+      <img src="K Latte_Mango.png" alt="K Latte 4">
+      <p>K Latte Mango</p>
+    </div>
+    <div class="drink-card k-latte">
+      <img src="K Latte_Matcha.png" alt="K Latte 5">
+      <p>K Latte Matcha</p>
+    </div>
+    <div class="drink-card k-latte">
+      <img src="K Latte_Peach Mango.png" alt="K Latte 6">
+      <p>K Latte Peach Mano</p>
+    </div>
+    <div class="drink-card k-latte">
+      <img src="K Latte_Strawberry.png" alt="K Latte 7">
+      <p>K Latte Strawberry</p>
+    </div>
+    <div class="drink-card k-latte">
+      <img src="Mixed Berries.png" alt="K Latte 8">
+      <p>K Latte Mixed Berries</p>
+    </div>
+
+
+    <!-- Hot Drinks -->
+    <div class="drink-card hot-coffee">
+      <img src="Hot Drinks_Cappuccino.png" alt="Hot Coffee 1">
+      <p>Hot Cappuccino</p>
+    </div>
+    <div class="drink-card hot-coffee">
+      <img src="Hot Drinks_Caramel Macchiato.png" alt="Hot Coffee 2">
+      <p>Hot Caramel Macchiato</p>
+    </div>
+    <div class="drink-card hot-coffee">
+      <img src="Hot Drinks_Chocolate.png" alt="Hot Coffee 3">
+      <p>Hot Chocolate</p>
+    </div>
+    <div class="drink-card hot-coffee">
+      <img src="Hot Drinks_French Vanilla.png" alt="Hot Coffee 4">
+      <p>Hot French Vanilla</p>
+    </div>
+    <div class="drink-card hot-coffee">
+      <img src="Hot Drinks_Hazelnut.png" alt="Hot Coffee 5">
+      <p>Hot Hazelnut</p>
+    </div>
+    <div class="drink-card hot-coffee">
+      <img src="Hot Drinks_Matcha Latte.png" alt="Hot Coffee 6">
+      <p>Hot Matcha Latte</p>
+    </div>
+    <div class="drink-card hot-coffee">
+      <img src="Hot Drinks_Roasted Coffee.png" alt="Hot Coffee 7">
+      <p>Hot Roasted Coffee</p>
+    </div>
+    <div class="drink-card hot-coffee">
+      <img src="Hot Drinks_Salted Caramel.png" alt="Hot Coffee 8">
+      <p>Hot Salted Caramel</p>
+    </div>
+
+
+    <!-- Mango Series -->
+    <div class="drink-card mango">
+      <img src="Mango Series_Cheesecake.png" alt="Mango 1">
+      <p>Mango Cheesecake</p>
+    </div>
+    <div class="drink-card mango">
+      <img src="Mango Series_Graham.png" alt="Mango 2">
+      <p>Mango Graham</p>
+    </div>
+    <div class="drink-card mango">
+      <img src="Mango Series_Milk Tea.png" alt="Mango 3">
+      <p>Mango Milk Tea</p>
+    </div>
+
+
+    <!-- Seasalt & Americano Orange-->
+    <div class="drink-card seasalt & americano">
+      <img src="Iced Coffee_Orange Americano.png" alt="Seasalt 1">
+      <p>Orange Americano</p>
+    </div>
+    <div class="drink-card seasalt & americano">
+      <img src="Iced Coffee_Sea Salt.png" alt="Seasalt 2">
+      <p>Sea Salt</p>
+    </div>
+
+
+    <!-- Tiramisu-->
+    <div class="drink-card tiramisu">
+      <img src="Cloud Latte Tiramisu.png" alt="Tiramisu 1">
+      <p>Cloud Latte Tiramisu</p>
+    </div>
+    <div class="drink-card tiramisu">
+      <img src="Matcha Mood Tiramisu.png" alt="Tiramisu 2">
+      <p>Matcha Mood Tiramisu</p>
+    </div>
+    <div class="drink-card tiramisu">
+      <img src="OG Cocoa Tiramisu.png" alt="Tiramisu 3">
+      <p>OG Cocoa Tiramisu</p>
+    </div>
+
+
+
   </div>
 </div>
 

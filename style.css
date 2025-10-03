@@ -986,23 +986,3 @@ header {
     text-align: center;
   }
 }
-/* Responsive footer fix */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center; /* lahat ng column naka-center */
-    text-align: center; /* text mismo naka-center */
-  }
-
-  .footer-column {
-    margin: 15px 0;
-  }
-
-  .footer-column h4,
-  .footer-column p,
-  .footer-column a,
-  .footer-column ul {
-    text-align: center;
-  }
-}
-

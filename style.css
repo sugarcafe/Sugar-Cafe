@@ -105,14 +105,12 @@ footer {
 
 .footer-container {
   display: flex;
-  justify-content: center;   /* ilalagay lahat sa gitna */
-  align-items: center;       /* vertical center */
-  gap: 60px;                 /* pagitan ng columns */
-  flex-wrap: wrap;           /* para responsive sa mobile */
+  flex-wrap: wrap;
+  justify-content: space-between;
   max-width: 1200px;
-  margin: auto;
-  text-align: center;        /* text alignment center */
+  margin: 0 auto;
 }
+
 .footer-column {
   flex: 1 1 250px;
   margin: 10px;
@@ -351,14 +349,11 @@ nav {
 
 .footer-container {
   display: flex;
-  justify-content: center;   /* ilalagay lahat sa gitna */
-  align-items: center;       /* vertical center */
-  gap: 60px;                 /* pagitan ng columns */
-  flex-wrap: wrap;           /* para responsive sa mobile */
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;        /* text alignment center */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
 }
+
 .footer-column {
   flex: 1 1 200px;
   margin: 10px;
@@ -564,15 +559,12 @@ body {
     }
     .footer-container {
       display: flex;
-      justify-content: center;   /* ilalagay lahat sa gitna */
-      align-items: center;       /* vertical center */
-      gap: 60px;                 /* pagitan ng columns */
-      flex-wrap: wrap;           /* para responsive sa mobile */
+      justify-content: space-between;
+      flex-wrap: wrap;
       max-width: 1200px;
       margin: auto;
-      text-align: center;        /* text alignment center */
+      align-items: center;
     }
-
     .footer-column {
       flex: 1;
       min-width: 200px;
@@ -1014,5 +1006,14 @@ header {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+}
+/* Para stacked vertically sa gitna kapag mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;   /* gawing column layout */
+    align-items: center;      /* center lahat */
+    text-align: center;       /* text gitna din */
+    gap: 30px;
   }
 }

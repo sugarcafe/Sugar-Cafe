@@ -986,3 +986,25 @@ header {
     text-align: center;
   }
 }
+/* Force mobile footer center */
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .footer-column {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .footer-column * {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
